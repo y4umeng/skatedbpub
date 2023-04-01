@@ -1,53 +1,30 @@
-<html>
-  <style>
-    body{ 
-      font-size: 15pt;
-      font-family: arial;
-    }
-  </style>
-
-
+<style>
+  body{
+    font-size: 15pt;
+    font-family: arial;
+  }
+</style>
 <body>
 
-  <div>
-    {% for n in skater_names %}
-    <div>{{n}}</div>
-    {% endfor %}
-  </div>
-  <div>
-    {% for n in video_names %}
-    <div>{{n}}</div>
-    {% endfor %}
-  </div>
-  <div>
-    {% for n in spot_names %}
-    <div>{{n}}</div>
-    {% endfor %}
-  </div>
+<h1>{{ desc }} by {{skater_name}} at {{spot_name}}</h1>
 
-  {{poster_name}}
+<div>
 
- 
-  <div>
-    {% for n, m, a in videos %}
-    <div>{{n}}</div>
-    <div>{{m}}</div>
-    <div>{{a}}</div>
-    {% endfor %}
-  </div>
+  <div>Seen in: <a href="{{link}}&t={{timestamp}}"> {{video_name}}</a></div>
 
+  <!--    {% for vid_desc,vid_link,vid_name in video %}
+      {{vid_name}}: {{vid_desc}}</div>
+      <div>Link: {{vid_link}}</div>
+      <iframe width="420" height="315"
+              src="{{vid_link}}">
+      </iframe>
+      {% endfor %}-->
 
-  <iframe id="inlineFrameExample"
-  title="Inline Frame Example"
-  width="3000"
-  height="2000"
-  src="https://www.youtube.com/embed/pAFE9sWcwVg">
-</iframe>
-
-OKEDJKNKWDNKDJ
-bruh
+</div>
 
 </body>
-
-
+<footer>
+  <div>Posted by {{poster_name}} on {{time}}</div>
+  <div>Verifier mod ID: {{verifier}}</div>
+</footer>
 </html>
