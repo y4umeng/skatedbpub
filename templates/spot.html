@@ -1,0 +1,10 @@
+<html>
+##map stuff blah blah blah
+<h1>{{spot_name}}</h1>
+<div>spot_desc</div>
+<div>Posted by {{spot_poster}}</div>
+
+<h2>Mentioned in:</h2>
+{% for trick_name, spot_name, skater_name, poster_name, trick_id in spot_posts %}
+<a href = "/trick?id={{trick_id}}">{{trick_name}} at {{spot_name}} by {{skater_name}}<a/>{% endfor %}
+</html>
