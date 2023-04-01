@@ -10,9 +10,9 @@
 <body>
 
 <h1>Recent Posts</h1>
-{% for trick_name, spot_name, skater_name, poster_name, trick_id, _, _, _ in posts %}
-<a href = "/trick?id={{trick_id}}">{{trick_name}} at {{spot_names}} by {{skater_names}}<a/>
-<small>Posted by: {{poster_name}}</small>
+{% for trick_descs, skater_names, spot_names, poster_names,  trick_ids, video_names, video_ids, spot_ids, user_ids, skater_ids in posts %}
+<a href = "/trick?id={{trick_id}}">{{trick_descs}} at {{spot_names}} by {{skater_names}}<a/>
+<small>Posted by: {{poster_names}}</small>
 {% endfor %}
 
 </body>
