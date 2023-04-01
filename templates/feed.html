@@ -1,0 +1,21 @@
+<html>
+
+<style>
+  body{
+    font-size: 15pt;
+    font-family: arial;
+  }
+</style>
+
+<body>
+
+<h1>Recent Posts</h1>
+{% for trick_name, spot_name, skater_name, poster_name, trick_id, _, _, _ in posts %}
+<a href = "/trick?id={{trick_id}}">{{trick_name}} at {{spot_names}} by {{skater_names}}<a/>
+<small>Posted by: {{poster_name}}</small>
+{% endfor %}
+
+</body>
+
+
+</html>
