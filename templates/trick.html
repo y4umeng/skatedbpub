@@ -1,4 +1,5 @@
 <html>
+<<<<<<< HEAD
 <style>
     body{
         font-size: 15pt;
@@ -28,4 +29,57 @@
     <div>Posted by {{poster_name}} on {{time}}</div>
     <div>Verifier mod ID: {{verifier}}</div>
 </footer>
+=======
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+
+  <div>
+    {% for n in skater_names %}
+    <div>{{n}}</div>
+    {% endfor %}
+  </div>
+  <div>
+    {% for n in video_names %}
+    <div>{{n}}</div>
+    {% endfor %}
+  </div>
+  <div>
+    {% for n in spot_names %}
+    <div>{{n}}</div>
+    {% endfor %}
+  </div>
+
+  {{poster_name}}
+
+ 
+  <div>
+    {% for n, m, a in videos %}
+    <div>{{n}}</div>
+    <div>{{m}}</div>
+    <div>{{a}}</div>
+    {% endfor %}
+  </div>
+
+
+  <iframe id="inlineFrameExample"
+  title="Inline Frame Example"
+  width="3000"
+  height="2000"
+  src="https://www.youtube.com/embed/pAFE9sWcwVg">
+</iframe>
+
+OKEDJKNKWDNKDJ
+bruh
+
+</body>
+
+
+>>>>>>> c6472d2 (all my htmls (buggy))
 </html>
