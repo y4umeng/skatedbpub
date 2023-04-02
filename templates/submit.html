@@ -11,24 +11,32 @@
     </style>
 <body>
 
-{% for message in get_flashed_messages() %}
-<h2>{{ message }}</h2>
-{% endfor %}
-
 <h1> Submit a trick!</h1>
+{% with messages = get_flashed_messages()  %}
+{% if messages %}
+{% for message in messages %}
+<div>
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
 
-<form action="trick_submit" method="post">
-    <label for="trick_descs">Enter trick description:</label>
-    <input type="text" name="trick_descs" id="trick_descs"><br>
+<form action="submit" method="post">
+    <label for="desc">Enter trick description:</label>
+    <input type="text" name="desc" id="desc"><br>
 
-    <label for="skater_names">Enter skater name  :</label>
-    <input type="text" name="skater_names" id="skater_names"><br>
+    <label for="skater">Enter skater name  :</label>
+    <input type="text" name="skater" id="skater"><br>
 
-    <label for="spot_names">Enter spot name:</label>
-    <input type="text" name="spot_names" id="spot_names"><br>
+    <label for="spot">Enter spot name:</label>
+    <input type="text" name="spot" id="spot"><br>
     
-    <label for="video_names">Enter video link    :</label>
-    <input type="text" name="video_names" id="video_names"><br>
+    <label for="link">Enter video link    :</label>
+    <input type="text" name="link" id="link"><br>
+
+    <label for="timestamp">Enter timestamp (0m00s)    :</label>
+    <input type="text" name="timestamp" id="timestamp"><br>
 
     <input type="submit" name="submit" value="Submit">
 </form>
