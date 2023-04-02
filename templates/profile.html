@@ -1,12 +1,73 @@
 <html>
-<h1>{{user_name}}</h1>
-<small>{{date_created}}</small>
+<style>
+h1 {text-align:center}
+small {text-align:center}
+tr {text-align: left}
+td {text-align: right}
+h4 {text-align: left}
+body{
+    background-image: url('https://static.vecteezy.com/system/resources/previews/006/907/446/non_2x/old-cracked-concrete-grunge-concrete-cement-wall-with-crack-for-your-design-and-background-texture-stone-walkway-concrete-texture-free-photo.JPG');
+
+}
+
+ * {
+     box-sizing: border-box;
+ }
+
+/* Create two unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.left {
+    width: 50%;
+}
+
+.right {
+    width: 50%;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+<body>
+<h1>{{user_name}}</h1><br>
+<small>{{date_created}}</small><br>
+<h1><a href = "/follow?id={{id}}"> <small>Follow</small></a>
+<a href = "/unfollow?id={{id}}"> <small>Unfollow</small></a></h1>
 <h2>{{user_name}}'s posts:</h2>
 
-<div>
-    {% for trick_name, spot_name, skater_name, poster_name, trick_id in posts %}
-    <a href = "/trick?id={{trick_id}}">{{trick_name}} at {{spot_names}} by {{skater_names}}<a/>
+{% for trick_descs, skater_names, spot_names, poster_names,  trick_id, video_names, video_ids, spot_ids, user_ids, skater_ids in posts %}
+
+<a href = "/trick?id={{trick_id}}">{{trick_descs}} at {{spot_names}} by {{skater_names}} <a/>
+    <br>
+    {% endfor %}
+    
+<div class = "row">
+    <div class = "column left" style = "background-color: #aaa">
+        <h2>Followed by:</h2><br>
+        {% for f in followers %}
+        <div>
+            <a href = /profile?id={{f}}>{{f}} <a/><br>
+        </div>
         {% endfor %}
+    </div>
+    <div class = "column right" style = "background-color: #aaa">
+        <h2>Following:</h2><br>
+        {% for f in following %}
+        <div>
+            <a href = /profile?id={{f}}>{{f}} <a/><br>
+        </div>
+        {% endfor %}
+        
+    </div>
+    
+    
     
 </div>
+</body>
 </html>
