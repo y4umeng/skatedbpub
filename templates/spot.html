@@ -1,0 +1,10 @@
+<html>
+<h1>{{spot_name}}</h1>
+<div>spot_desc</div>
+<div>Posted by {{spot_poster}}</div>
+<a href = ""
+
+<h2>Mentioned in:</h2>
+{% for trick_ids, trick_descs, trick_times, skaters, spots, posters, links in posts %}
+<a href = "/trick?id={{trick_id}}">{{trick_descs}} at {{spots}} by {{skaters}}<a/><br>{% endfor %}
+</html>
