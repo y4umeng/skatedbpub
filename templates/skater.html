@@ -1,0 +1,11 @@
+<html>
+<h1>{{skater_name}}</h1><br>
+
+<h2>{{skater_name}}'s tricks: </h2>
+
+<div>
+    {% for trick_ids, trick_descs, trick_times, skaters, spots, posters, links in posts %}
+    <a href = "/trick?id={{trick_ids}}">{{trick_descs}} at {{spots}}<a/><br>{% endfor %}
+        <small> Posted by: <a href = "/profile?id={{posters}}"> {{posters}}<a>
+</div>
+</html>

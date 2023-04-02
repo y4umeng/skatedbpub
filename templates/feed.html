@@ -31,7 +31,7 @@
 <h1>Posts</h1>
 {% for trick_ids, trick_descs, trick_times, skaters, spots, posters, links in posts %}
 <a href = "/trick?id={{trick_ids}}">{{trick_descs}} at {{spots}} by {{skaters}}<a/>
-<small>Posted by: {{posters}}</small>
+<small>Posted by: <a href = "/profile?id={{posters}}">{{posters}}</a></small>
 <br>
 {% endfor %}
 

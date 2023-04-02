@@ -6,11 +6,11 @@
   }
 </style>
 <body>
-<h1>{{ desc }} by {{skater_name}} at {{spot}}</h1>
+<h1>{{ desc }} by {{skater}} at <a href = "/spot?id={{spot}}"> {{spot}} </a></h1> <br>
 
 <div>
 
-  <div>Seen <a href="{{link}}"> here</a></div>
+  <div>Seen in <a href="{{link}}"> this video</a></div>
 
   <!--    {% for vid_desc,vid_link,vid_name in video %}
       {{vid_name}}: {{vid_desc}}</div>
@@ -24,7 +24,7 @@
 
 
 <footer>
-  <div>Posted by {{poster_name}} on {{time}}</div>
+  <div>Posted by <a href = "/profile?id={{poster}}"> {{poster}} </a>on {{time}}</div><br>
   <div>Verifier mod ID: {{verifier}}</div>
 </footer>
 </body>
