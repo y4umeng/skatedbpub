@@ -1,3 +1,4 @@
+<html>
 <style>
   body{
     font-size: 15pt;
@@ -5,12 +6,11 @@
   }
 </style>
 <body>
-
-<h1>{{ desc }} by {{skater_name}} at {{spot_name}}</h1>
+<h1>{{ desc }} by {{skater_name}} at {{spot}}</h1>
 
 <div>
 
-  <div>Seen in: <a href="{{link}}&t={{timestamp}}"> {{video_name}}</a></div>
+  <div>Seen <a href="{{link}}"> here</a></div>
 
   <!--    {% for vid_desc,vid_link,vid_name in video %}
       {{vid_name}}: {{vid_desc}}</div>
@@ -22,9 +22,10 @@
 
 </div>
 
-</body>
+
 <footer>
   <div>Posted by {{poster_name}} on {{time}}</div>
   <div>Verifier mod ID: {{verifier}}</div>
 </footer>
+</body>
 </html>

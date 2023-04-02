@@ -28,10 +28,10 @@
 <a href = "/submit">Post!<a/>
 <p><a href = "/logout">log out<a/></p>
 
-<h1>Recent Posts</h1>
-{% for trick_descs, skater_names, spot_names, poster_names,  trick_id, video_names, video_ids, spot_ids, user_ids, skater_ids in posts %}
-<a href = "/trick?id={{trick_id}}">{{trick_descs}} at {{spot_names}} by {{skater_names}}<a/>
-<small>Posted by: {{poster_names}}</small>
+<h1>Posts</h1>
+{% for trick_ids, trick_descs, trick_times, skaters, spots, posters, links in posts %}
+<a href = "/trick?id={{trick_ids}}">{{trick_descs}} at {{spots}} by {{skaters}}<a/>
+<small>Posted by: {{posters}}</small>
 <br>
 {% endfor %}
 

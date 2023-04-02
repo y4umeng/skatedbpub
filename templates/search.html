@@ -1,14 +1,67 @@
 <html>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Create two unequal columns that floats next to each other */
+    .column {
+        float: left;
+        padding: 10px;
+        height: 300px; /* Should be removed. Only for demonstration */
+    }
+
+    .left {
+        width: 33.33%;
+    }
+
+    .right {
+        width: 33.33%;
+    }
+    .middle{
+        width:33.33%;
+    }
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }    
+    
+</style>
 <form action="/search" method="GET">
 <input type = "text" name = "terms" placeholder="Search tricks...">
     <button type="enter">Search</button>
 </form>
 
-<h1>Results: </h1><br>
-{% for trick_descs, skater_names, spot_names, poster_names,  trick_id, video_names, video_ids, spot_ids, user_ids, skater_ids in posts %}
 
-<a href = "/trick?id={{trick_id}}">{{trick_descs}} at {{spot_names}} by {{skater_names}}<a/>
-    <small>Posted by: {{poster_names}}</small>
-    <br>
-    {% endfor %}
+<div class = "row">
+    <div class = "column left" style="background-color: #aaa">
+        
+        <h1>Spot results: </h1><br>
+        
+    </div>
+    
+    <div class = "column middle" style = "background-color: #aaa">
+        <h1>Trick results: </h1><br>
+        {% for trick_descs, skater_names, spot_names, poster_names,  trick_id, video_names, video_ids, spot_ids, user_ids, skater_ids in posts %}
+
+        <a href = "/trick?id={{trick_id}}">{{trick_descs}} at {{spot_names}} by {{skater_names}}<a/>
+            <small>Posted by: {{poster_names}}</small>
+            <br>
+            {% endfor %}    
+        
+        
+    
+    </div>
+
+    <div class = "column right" style = "background-color: #aaa">
+        <h1>Skater results: </h1><br>
+        
+        
+    </div>
+    
+    
+    
+</div>
+
 </html>

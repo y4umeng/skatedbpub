@@ -41,9 +41,8 @@ body{
 <a href = "/unfollow?id={{id}}"> <small>Unfollow</small></a></h1>
 <h2>{{username}}'s posts:</h2>
 
-{% for trick_descs, skater_names, spot_names, poster_names, trick_id, video_names, video_ids, spot_ids, user_ids, skater_ids in posts %}
-
-<a href = "/trick?id={{trick_id}}">{{trick_descs}} at {{spot_names}} by {{skater_names}} <a/>
+    {% for trick_ids, trick_descs, trick_times, skaters, spots, posters, links in posts %}
+<a href = "/trick?id={{trick_ids}}">{{trick_descs}} at {{spots}} by {{skaters}} <a/>
     <br>
     {% endfor %}
     
