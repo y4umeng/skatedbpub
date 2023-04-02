@@ -10,6 +10,11 @@
     }  
     </style>
 <body>
+
+{% for message in get_flashed_messages() %}
+<h2>{{ message }}</h2>
+{% endfor %}
+
 <h1> Submit a trick!</h1>
 
 <form action="trick_submit" method="post">
