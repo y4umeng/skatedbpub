@@ -32,6 +32,15 @@
 <footer>
   <div>Posted by <a href = "/profile?id={{poster}}" target="_blank"> {{poster}} </a>on {{time}}</div><br>
   <div>Verifier mod ID: {{verifier}}</div>
+  {% with messages = get_flashed_messages()  %}
+  {% if messages %}
+  {% for message in messages %}
+  <div>
+      {{ message }}
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
 </footer>
 </body>
 </html>
