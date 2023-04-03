@@ -2,10 +2,12 @@
 <h1>{{spot_name}}</h1><br>
 <div>{{spot_desc}}}</div><br>
 <div>Posted by {{spot_poster_username}}</div>
-<a href = "https://maps.google.com/?q=<{{lat}}>,{{lon}}">Click here for location</a>
+<a href = "https://www.google.com/maps/search/?api=1&query=<lat>,<lon>">Click here for location</a>
 
 <h2>Mentioned in:</h2>
 {% for trick_ids, trick_descs, trick_times, skaters, spots, posters, links in posts %}
-<a href = "/trick?id={{trick_ids}}">{{trick_descs}} at {{spots}} by {{skaters}}<a/><br>{% endfor %}
-    <small> Posted by: <a href = "/profile?id={{posters}}"> {{posters}}<a>
+<a href = "/trick?id={{trick_ids}}">{{trick_descs}} at {{spots}} by {{skaters}}<a/><br>
+    <small> Posted by: <a href = "/profile?id={{posters}}"> {{posters}}</a> 
+    {% endfor %}
+    
 </html>
