@@ -10,6 +10,10 @@ body{
 
 }
 
+span {
+    background-color: #aaa;
+}
+
  * {
      box-sizing: border-box;
  }
@@ -35,16 +39,18 @@ body{
 }
 </style>
 <body>
-<h1>{{username}}</h1><br>
-<small>{{date_created}}</small><br>
+<h2><a href=feed style = "text-decoration: none; color: black;">SkateDB</h2></a>
+<h1 >{{username}}</h1><br>
+<p style ="text-align: center; color: black"><span>Registered {{date_created}}</span></p><br>
 <h1><a href = "/follow?id={{id}}"> <small>Follow</small></a>
 <a href = "/unfollow?id={{id}}"> <small>Unfollow</small></a></h1>
-<h2>{{username}}'s posts:</h2>
+<h2><span>{{username}}'s posts:</span></h2>
 
     {% for trick_ids, trick_descs, trick_times, skaters, spots, posters, links in posts %}
-<a href = "/trick?id={{trick_ids}}">{{trick_descs}} at {{spots}} by {{skaters}} <a/>
+<a href = "/trick?id={{trick_ids}}" target="_blank"><span>{{trick_descs}} at {{spots}} by {{skaters}}</span><a/>
     <br>
     {% endfor %}
+    <br><br>
     
 <div class = "row">
     <div class = "column left" style = "background-color: #aaa">

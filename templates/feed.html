@@ -1,7 +1,7 @@
 <html>
 <style>
   body{
-    font-size: 15pt;
+    font-size: 13pt;
     font-family: arial;
       background-image: url('https://static.vecteezy.com/system/resources/previews/006/907/446/non_2x/old-cracked-concrete-grunge-concrete-cement-wall-with-crack-for-your-design-and-background-texture-stone-walkway-concrete-texture-free-photo.JPG');
   
@@ -15,24 +15,38 @@
   h1 {
       text-align: left;
   }
+  span {
+      background-color: #aaa;
+  }
 
   
 </style>
 <div class = "hero">
 <body>
-<h1>SkateDB <form action="/search" method="GET">
+<p style="text-align: right"><a href = "/logout"><span>log out</span><a/></p>
+<h2><a href=feed style = "text-decoration: none; font-size: 25pt; color: black;">SkateDB</a></h2>
+
+<a href = "/submit"><span>Post a trick!</span><a/>
+    <a href = "/submit_spot"><span>Post a spot!</span><a/>
+
+    <form action="/search" method="GET">
     <input type = "text" name = "terms" placeholder="Search tricks...">
     <button type="enter">Search</button>
-</form></h1>
+</form>
 
-<a href = "/submit">Post!<a/>
-<p><a href = "/logout">log out<a/></p>
+
+
 
 <h1>Posts</h1>
-{% for trick_ids, trick_descs, trick_times, skaters, spots, posters, links in posts %}
-<a href = "/trick?id={{trick_ids}}">{{trick_descs}} at {{spots}} by {{skaters}}<a/>
-<small>Posted by: <a href = "/profile?id={{posters}}">{{posters}}</a></small>
-<br>
+        
+    {% for trick_ids, trick_descs, trick_times, skaters, spots, posters, links in posts %}
+        <h2>
+   <a href = "/trick?id={{trick_ids}}"><small style="background-color: #aaa">{{trick_descs}} at {{spots}} by {{skaters}}<br><a/> Posted by: <a href = "/profile?id={{posters}}">{{posters}}</a></small>
+        </h2>
+       
+        
+        
+
 {% endfor %}
 
 </body>

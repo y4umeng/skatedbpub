@@ -1,16 +1,22 @@
 <html>
 <style>
   body{
+    background-image: url('https://static.vecteezy.com/system/resources/previews/006/907/446/non_2x/old-cracked-concrete-grunge-concrete-cement-wall-with-crack-for-your-design-and-background-texture-stone-walkway-concrete-texture-free-photo.JPG');
     font-size: 15pt;
     font-family: arial;
   }
+  span {
+    background-color: #aaa;
+  }
 </style>
 <body>
-<h1>{{ desc }} by {{skater}} at <a href = "/spot?id={{spot}}"> {{spot}} </a></h1> <br>
+
+<h2><a href=feed style = "text-decoration: none; color: black;">SkateDB</h2></a>
+<h1>{{ desc }} by {{skater}} at <a href = "/spot?id={{spot}}" target="_blank"> {{spot}} </a></h1> <br>
 
 <div>
 
-  <div>Seen in <a href="{{link}}"> this video</a></div>
+  <div>Seen in <a href="{{link}}" target="_blank"> this video</a></div>
 
   <!--    {% for vid_desc,vid_link,vid_name in video %}
       {{vid_name}}: {{vid_desc}}</div>
@@ -24,7 +30,7 @@
 
 
 <footer>
-  <div>Posted by <a href = "/profile?id={{poster}}"> {{poster}} </a>on {{time}}</div><br>
+  <div>Posted by <a href = "/profile?id={{poster}}" target="_blank"> {{poster}} </a>on {{time}}</div><br>
   <div>Verifier mod ID: {{verifier}}</div>
 </footer>
 </body>

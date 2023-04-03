@@ -3,6 +3,10 @@
     * {
         box-sizing: border-box;
     }
+    body{
+        background-image: url('https://static.vecteezy.com/system/resources/previews/006/907/446/non_2x/old-cracked-concrete-grunge-concrete-cement-wall-with-crack-for-your-design-and-background-texture-stone-walkway-concrete-texture-free-photo.JPG');
+
+    }
 
     /* Create two unequal columns that floats next to each other */
     .column {
@@ -28,6 +32,9 @@
     }    
     
 </style>
+<body>
+<h2><a href=feed style = "text-decoration: none; color: black;">SkateDB</h2></a>
+
 <form action="/search" method="GET">
 <input type = "text" name = "terms" placeholder="Search tricks...">
     <button type="enter">Search</button>
@@ -36,9 +43,11 @@
 
 <div class = "row">
     <div class = "column left" style="background-color: #aaa">
-        
         <h1>Spot results: </h1><br>
-        
+        {% for spot in spots %}
+        <a href = "/spot?id={{spot}}">{{spot}}<a/> 
+        <br>
+        {% endfor %}
     </div>
     
     <div class = "column middle" style = "background-color: #aaa">
@@ -46,7 +55,7 @@
         {% for trick_ids, trick_descs, trick_times, skaters, spots, posters, links in posts %}
 
         <a href = "/trick?id={{trick_ids}}">{{trick_descs}} at {{spots}} by {{skaters}}<a/>
-            <small>Posted by: {{posters}}</small>
+            <small>Posted by: <a href = "/profile?id={{posters}}">{{posters}}</a></small>
             <br>
             {% endfor %}    
         
@@ -55,7 +64,7 @@
     </div>
 
     <div class = "column right" style = "background-color: #aaa">
-        <h1>Skater results: </h1><br>
+        
         
         
     </div>
@@ -63,5 +72,5 @@
     
     
 </div>
-
+</body>
 </html>

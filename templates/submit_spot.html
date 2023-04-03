@@ -11,7 +11,8 @@
     </style>
 <body>
 <h2><a href=feed style = "text-decoration: none; text-align: left; color: black;">SkateDB</h2></a>
-<h1> Submit a trick!</h1>
+
+<h1> Submit a spot!</h1>
 {% with messages = get_flashed_messages()  %}
 {% if messages %}
 {% for message in messages %}
@@ -22,26 +23,21 @@
 {% endif %}
 {% endwith %}
 
-<form action="submit" method="post">
-    <label for="desc">Enter trick description:</label>
-    <input type="text" name="desc" id="desc"><br>
-
-    <label for="skater">Enter skater name  :</label>
-    <input type="text" name="skater" id="skater"><br>
-
+<form action="submit_spot" method="post">
     <label for="spot">Enter spot name:</label>
     <input type="text" name="spot" id="spot"><br>
+
+    <label for="desc">Enter spot description:</label>
+    <input type="text" name="desc" id="desc"><br>
+
+    <label for="lat">Enter latitude:</label>
+    <input type="number" step="any" name="lat" id="lat"><br>
     
-    <label for="link">Enter video link    :</label>
-    <input type="text" name="link" id="link"><br>
+    <label for="lon">Enter longitude:</label>
+    <input type="number" step="any" name="lon" id="lon"><br>
 
-    <label for="timestamp">Enter timestamp (0m00s)    :</label>
-    <input type="text" name="timestamp" id="timestamp"><br>
-
-    <input type="submit" name="submit" value="Submit">
+    <input type="submit" name="submit_spot" value="Submit">
 </form>
-
-
 
 
 </body>
