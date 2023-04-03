@@ -1,4 +1,14 @@
 <html>
+<style>
+body{
+font-size: 13pt;
+font-family: arial;
+background-image: url('https://static.vecteezy.com/system/resources/previews/006/907/446/non_2x/old-cracked-concrete-grunge-concrete-cement-wall-with-crack-for-your-design-and-background-texture-stone-walkway-concrete-texture-free-photo.JPG');
+
+}
+</style>
+<body>
+<h2><a href=feed style = "text-decoration: none; font-size: 25pt; color: black;">SkateDB</a></h2>
 
 <h2> Host an event: </h2><br>
 
@@ -32,13 +42,16 @@
 </form>
 
 <h1> Events!</h1>
+    <div style="background-color: #aaa">
     {% for names, descs, spots, dates, poster in events%}
         <div>
         {{names}} hosted by {{poster}} on {{dates}} at {{spots}} <br>
         <small>{{descs}}</small>
+            <br><br>
         </div>
     {% endfor %}
-    
-    
+    </div>
 
+
+</body>
 </html>
