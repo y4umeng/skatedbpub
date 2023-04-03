@@ -1,34 +1,44 @@
 <html>
 
 <h2> Host an event: </h2><br>
-<form action="event_submit" method="post">
+
+{% with messages = get_flashed_messages()  %}
+{% if messages %}
+{% for message in messages %}
+<div>
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+
+<form action="event" method="post">
     
-    <label for="event_name">Enter event name:</label>
-    <input type="text" name="trick_descs" id="event_name"><br>
+    <label for="name">Enter event name:</label>
+    <input type="text" name="name" id="name"><br>
 
-    <label for="event_desc">Enter event description:</label>
-    <input type="text" name="trick_descs" id="event_desc"><br>
+    <label for="desc">Enter event description:</label>
+    <input type="text" name="desc" id="desc"><br>
 
-    <label for="event_spot">Enter spot:</label>
-    <input type="text" name="skater_names" id="event_spot"><br>
+    <label for="spot">Enter spot:</label>
+    <input type="text" name="spot" id="spot"><br>
     
-    <label for="event_date"> Enter date:</label>
-    <input type="text" name="video_names" id="event_date"><br>
-
-    <label for="event_time"> Enter time:</label>
-    <input type="text" name="video_names" id="event_time"><br>
+    <label for="date and time"> Enter date (mm/dd/yy):</label>
+    <input type="datetime-local" name="date" id="date"><br>
 
     <input type="submit" name="submit" value="Submit">
     
-<h1> Events!</h1>
-    {% for , in %}
-    <div>
-     {{}}hosted by {{}} on {{}} at {}} <br>
-        <small>{{}}</small>
-    </div>
-    
-    
-    
-    
 </form>
+
+<h1> Events!</h1>
+    {% for names, descs, spots, dates, poster in events%}
+        <div>
+        {{names}} hosted by {{poster}} on {{dates}} at {{spots}} <br>
+        <small>{{descs}}</small>
+        </div>
+    {% endfor %}
+    
+    
+
 </html>
