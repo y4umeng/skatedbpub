@@ -36,9 +36,11 @@
 
 <div class = "row">
     <div class = "column left" style="background-color: #aaa">
-        
         <h1>Spot results: </h1><br>
-        
+        {% for spot in spots %}
+        <a href = "/spot?id={{spot}}">{{spot}}<a/> 
+        <br>
+        {% endfor %}
     </div>
     
     <div class = "column middle" style = "background-color: #aaa">
